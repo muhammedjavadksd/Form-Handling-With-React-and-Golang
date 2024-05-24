@@ -6,3 +6,7 @@ type FormRequest struct {
 	Email    string `json:"email"`
 	Address  string `json:"address"`
 }
+
+type FormResponse struct {
+	Id int32
+}
