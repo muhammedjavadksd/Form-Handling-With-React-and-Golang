@@ -1,6 +1,7 @@
 package formclient
 
 import (
+	"api-gateway/pkg/config"
 	"api-gateway/pkg/form-client/form/pb"
 	"log"
 
@@ -8,8 +9,8 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
-func InitClient() pb.FormClient {
-	conn, err := grpc.NewClient(":50051", grpc.WithTransportCredentials(insecure.NewCredentials()))
+func InitClient(cfg *config.Config) pb.FormClient {
+	conn, err := grpc.NewClient(":"+cfg.FormGrpc, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 
 		log.Fatalf(err.Error())
