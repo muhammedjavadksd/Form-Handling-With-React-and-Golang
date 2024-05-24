@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package="./form-manager/pkg/server/pb";
+
+service Form{
+    rpc InsertForm(FormReq) returns (FormResponse){}
+}
+
+
+message FormReq{
+    string FullName =1;
+    int64 Phone =2;
+    string Email =3;
+    string Address =4;
+}
+
+message FormResponse{
+    
+    int64 Id =1;
+}
+
