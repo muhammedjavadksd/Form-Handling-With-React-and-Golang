@@ -9,7 +9,7 @@ import (
 
 func InitDI() *api.Server {
 	cfg := config.NewConfig()
-	conn := formclient.InitClient()
+	conn := formclient.InitClient(cfg)
 	form := handler.NewFormHandler(conn)
 	server := api.NewHTTPServer(cfg, *form)
 	return server
