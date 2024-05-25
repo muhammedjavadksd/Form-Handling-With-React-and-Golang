@@ -7,15 +7,14 @@ import (
 )
 
 type Config struct {
-	Port     string
-	FormGrpc string
+	GrpcPort string
 }
 
 func NewConfig() *Config {
-	port := os.Getenv("PORT")
-	formGrpc := os.Getenv("FORM_GRPC_PORT")
+
+	formGrpc := os.Getenv("GRPC_PORT")
 	return &Config{
-		Port:     port,
-		FormGrpc: formGrpc,
+
+		GrpcPort: formGrpc,
 	}
 }
