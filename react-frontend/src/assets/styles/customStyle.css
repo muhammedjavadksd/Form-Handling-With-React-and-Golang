@@ -1,0 +1,63 @@
+.one-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(15, 15, 15, 0.7);
+    transform-style: preserve-3d;
+    animation: rot 2s infinite ease;
+    border-radius: 20px;
+    box-shadow: 0 0 50px 0px, inset 0 0 20px 0px;
+    color: white;
+    transition: 1.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one-div .text {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.one-div:hover.one-div .text {
+    scale: 1.1;
+    opacity: 1;
+}
+
+.one-div:hover.one-div span {
+    display: none;
+    transition: all 4s;
+}
+
+.one-div:hover {
+    box-shadow: 0 0 30px 1000px rgba(0, 0, 0, 0), inset 5px 5px 5px 0px rgb(199, 23, 23);
+}
+
+@keyframes rot {
+    0% {
+        transform: rotateX(-15deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotateX(-15deg) translateY(-10px);
+    }
+
+    100% {
+        transform: rotateX(-15deg) translateY(0px);
+    }
+}
+
+
+
+
+.span-error {
+    color: rgb(247, 36, 36);
+    font-size: medium;
+    display: none;
+}
+
+.custom-input-div input:invalid[focused="true"]~.span-error {
+    display: block;
+}
